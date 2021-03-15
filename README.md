@@ -1,6 +1,6 @@
 # Scrape Indian e-commerce wesbistes
 
-A libraby for scraping search results from popular shopping wesbites in India
+A library for scraping search results from popular shopping wesbites in India
 
 ## Requirements
 
