@@ -56,3 +56,4 @@ with open("search_urls.txt", 'r') as urllist, open('search_output.jsonl', 'w') a
                     json.dump(product, outfile)
                     outfile.write(", \n")
                 # sleep(5)
+print(product)
