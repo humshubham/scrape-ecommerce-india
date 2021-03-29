@@ -37,6 +37,7 @@ def flipkart(f_product):
     }
 
     url = "https://www.flipkart.com/search?q="+product
+    print(url)
 
     r = requests.get(url, headers=headers)    
     data =  e.extract(r.text)
@@ -44,11 +45,11 @@ def flipkart(f_product):
     final_products = []
 
     if data:
-        pr
-'''        for product in data['products']:
-            product['url'] = 'https://www.flipkart.com' + product['url']
-            product['price'] = product['price'].replace("\u20b9", "")
-            final_products.append(product)
+        for product in data['products']:
+            if product['title']:
+                product['url'] = 'https://www.flipkart.com' + product['url']
+                product['price'] = product['price'].replace("\u20b9", "")
+                final_products.append(product)
 
     i = 0
     response = {}
@@ -56,8 +57,9 @@ def flipkart(f_product):
         response[str(i)] = product
         i+=1
 
-    return response 
-'''
+    return response
+    
+
 @app.route('/amazon/<a_product>') #decorator drfines the   
 def amazon(a_product):  
     product = a_product.split(" ")
